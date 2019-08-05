@@ -13,7 +13,7 @@ struct TaskStore {
     var tasks = [[Task](), [Task]()]
     
     // add tasks
-    mutating func add(_ task: Task, at index: Int, isDone: Bool = false) {
+    mutating func addTask(_ task: Task, at index: Int, isDone: Bool = false) {
         
         let section = isDone ? 1 : 0
         tasks[section].insert(task, at: index)
@@ -24,6 +24,5 @@ struct TaskStore {
         
         let section = isDone ? 1 : 0
         return tasks[section].remove(at: index)
-        
     }
 }

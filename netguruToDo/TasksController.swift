@@ -15,14 +15,24 @@ class TasksController: UITableViewController {
     @IBAction func addTask(_ sender: UIBarButtonItem) {
         print("addTask")
         // Setting up allert controller
+        let alertController = UIAlertController(title: "Add Task", message: nil, preferredStyle: .alert
+        )
         
         // Set up the actions
+        let addAction = UIAlertAction(title: "Add", style: .default, handler: nil)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
         
         // Add the text field
+        alertController.addTextField { textField in
+            textField.placeholder = "Enter task name... "
+        }
         
         // Add the actions
+        alertController.addAction(addAction)
+        alertController.addAction(cancelAction)
         
         // Present
+        present(alertController, animated: true)
     }
     
     override func viewDidLoad() {
@@ -57,7 +67,6 @@ extension TasksController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell_id", for: indexPath)
         cell.textLabel?.text = taskStore.tasks[indexPath.section][indexPath.row].name
-//        cell.backgroundColor = .white
         return cell
     }
 }
