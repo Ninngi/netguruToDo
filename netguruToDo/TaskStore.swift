@@ -20,7 +20,7 @@ struct TaskStore {
     }
     
     // remove tasks
-    mutating func removeTask(at index: Int, isDone: Bool = false) -> Task {
+    @discardableResult mutating func removeTask(at index: Int, isDone: Bool = false) -> Task {
         
         let section = isDone ? 1 : 0
         return tasks[section].remove(at: index)

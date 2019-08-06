@@ -9,25 +9,25 @@
 /* Begin PBXBuildFile section */
 		435108A422F8CEE4006146F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435108A322F8CEE4006146F6 /* AppDelegate.swift */; };
 		435108A922F8CEE4006146F6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 435108A722F8CEE4006146F6 /* Main.storyboard */; };
-		435108AB22F8CEE5006146F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 435108AA22F8CEE5006146F6 /* Assets.xcassets */; };
 		435108AE22F8CEE5006146F6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 435108AC22F8CEE5006146F6 /* LaunchScreen.storyboard */; };
 		435108B622F8CF6F006146F6 /* TasksController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435108B522F8CF6F006146F6 /* TasksController.swift */; };
 		435108B922F8D1BF006146F6 /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435108B822F8D1BF006146F6 /* extensions.swift */; };
 		435108BB22F8DA72006146F6 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435108BA22F8DA72006146F6 /* Task.swift */; };
 		435108BD22F8DAF2006146F6 /* TaskStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435108BC22F8DAF2006146F6 /* TaskStore.swift */; };
+		435108C122F8FBED006146F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 435108C022F8FBED006146F6 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		435108A022F8CEE4006146F6 /* netguruToDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = netguruToDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		435108A322F8CEE4006146F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		435108A822F8CEE4006146F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		435108AA22F8CEE5006146F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		435108AD22F8CEE5006146F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		435108AF22F8CEE5006146F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		435108B522F8CF6F006146F6 /* TasksController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksController.swift; sourceTree = "<group>"; };
 		435108B822F8D1BF006146F6 /* extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
 		435108BA22F8DA72006146F6 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		435108BC22F8DAF2006146F6 /* TaskStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskStore.swift; sourceTree = "<group>"; };
+		435108C022F8FBED006146F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,10 +60,10 @@
 		435108A222F8CEE4006146F6 /* netguruToDo */ = {
 			isa = PBXGroup;
 			children = (
+				435108C022F8FBED006146F6 /* Assets.xcassets */,
 				435108B722F8D19B006146F6 /* extensions */,
 				435108A322F8CEE4006146F6 /* AppDelegate.swift */,
 				435108A722F8CEE4006146F6 /* Main.storyboard */,
-				435108AA22F8CEE5006146F6 /* Assets.xcassets */,
 				435108AC22F8CEE5006146F6 /* LaunchScreen.storyboard */,
 				435108AF22F8CEE5006146F6 /* Info.plist */,
 				435108B522F8CF6F006146F6 /* TasksController.swift */,
@@ -140,7 +140,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				435108AE22F8CEE5006146F6 /* LaunchScreen.storyboard in Resources */,
-				435108AB22F8CEE5006146F6 /* Assets.xcassets in Resources */,
+				435108C122F8FBED006146F6 /* Assets.xcassets in Resources */,
 				435108A922F8CEE4006146F6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

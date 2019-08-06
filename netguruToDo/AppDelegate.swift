@@ -16,6 +16,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // Init
+        var taskStore = TaskStore()
+//
+//        let todoTasks = [Task(name: "Cześć"), Task(name: "Co tam słychać"), Task(name: "Idziesz spać juszzzz ?")]
+//        let doneTasks = [Task(name: "Bye"), Task(name: "Wszystko OK!"), Task(name: "ale się wyspałem!")]
+//
+//        taskStore.tasks = [todoTasks, doneTasks]
+        
+        // Access TaskController
+        let tasksController = window?.rootViewController?.children.first as? TasksController
+        
+        // Set taskStore
+        tasksController?.taskStore = taskStore
+        
         return true
     }
 
@@ -43,4 +58,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 }
+
+
 
