@@ -15,6 +15,7 @@
 		435108BB22F8DA72006146F6 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435108BA22F8DA72006146F6 /* Task.swift */; };
 		435108BD22F8DAF2006146F6 /* TaskStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435108BC22F8DAF2006146F6 /* TaskStore.swift */; };
 		435108C122F8FBED006146F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 435108C022F8FBED006146F6 /* Assets.xcassets */; };
+		435108C822F90823006146F6 /* TaskUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435108C622F90823006146F6 /* TaskUtility.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		435108BA22F8DA72006146F6 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		435108BC22F8DAF2006146F6 /* TaskStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskStore.swift; sourceTree = "<group>"; };
 		435108C022F8FBED006146F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		435108C722F90823006146F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Base; path = netguruToDo/Base.lproj/TaskUtility.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,15 +62,12 @@
 		435108A222F8CEE4006146F6 /* netguruToDo */ = {
 			isa = PBXGroup;
 			children = (
-				435108C022F8FBED006146F6 /* Assets.xcassets */,
-				435108B722F8D19B006146F6 /* extensions */,
-				435108A322F8CEE4006146F6 /* AppDelegate.swift */,
 				435108A722F8CEE4006146F6 /* Main.storyboard */,
-				435108AC22F8CEE5006146F6 /* LaunchScreen.storyboard */,
-				435108AF22F8CEE5006146F6 /* Info.plist */,
-				435108B522F8CF6F006146F6 /* TasksController.swift */,
-				435108BA22F8DA72006146F6 /* Task.swift */,
-				435108BC22F8DAF2006146F6 /* TaskStore.swift */,
+				435108C222F904D6006146F6 /* Models */,
+				435108C322F904E5006146F6 /* Controllers */,
+				435108C422F904F2006146F6 /* Helpers */,
+				435108C522F9050C006146F6 /* System */,
+				435108B722F8D19B006146F6 /* extensions */,
 			);
 			path = netguruToDo;
 			sourceTree = "<group>";
@@ -79,6 +78,42 @@
 				435108B822F8D1BF006146F6 /* extensions.swift */,
 			);
 			path = extensions;
+			sourceTree = "<group>";
+		};
+		435108C222F904D6006146F6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				435108BA22F8DA72006146F6 /* Task.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		435108C322F904E5006146F6 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				435108B522F8CF6F006146F6 /* TasksController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		435108C422F904F2006146F6 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				435108BC22F8DAF2006146F6 /* TaskStore.swift */,
+				435108C622F90823006146F6 /* TaskUtility.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		435108C522F9050C006146F6 /* System */ = {
+			isa = PBXGroup;
+			children = (
+				435108C022F8FBED006146F6 /* Assets.xcassets */,
+				435108A322F8CEE4006146F6 /* AppDelegate.swift */,
+				435108AC22F8CEE5006146F6 /* LaunchScreen.storyboard */,
+				435108AF22F8CEE5006146F6 /* Info.plist */,
+			);
+			path = System;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -155,6 +190,7 @@
 				435108BD22F8DAF2006146F6 /* TaskStore.swift in Sources */,
 				435108BB22F8DA72006146F6 /* Task.swift in Sources */,
 				435108B622F8CF6F006146F6 /* TasksController.swift in Sources */,
+				435108C822F90823006146F6 /* TaskUtility.swift in Sources */,
 				435108B922F8D1BF006146F6 /* extensions.swift in Sources */,
 				435108A422F8CEE4006146F6 /* AppDelegate.swift in Sources */,
 			);
@@ -177,6 +213,14 @@
 				435108AD22F8CEE5006146F6 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		435108C622F90823006146F6 /* TaskUtility.swift */ = {
+			isa = PBXVariantGroup;
+			children = (
+				435108C722F90823006146F6 /* Base */,
+			);
+			name = TaskUtility.swift;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -304,7 +348,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BNT8RLL3AQ;
-				INFOPLIST_FILE = netguruToDo/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/netguruToDo/System/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -322,7 +366,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BNT8RLL3AQ;
-				INFOPLIST_FILE = netguruToDo/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/netguruToDo/System/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
