@@ -101,7 +101,7 @@ extension TasksController {
     
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
-        let deleteAction = UIContextualAction(style: .destructive, title: nil) { in
+        let deleteAction = UIContextualAction(style: .destructive, title: nil) { (action, sourceView, completionHandler) in
             
             let isDone = self.taskStore.tasks[indexPath.section][indexPath.row].isDone
             
@@ -121,10 +121,21 @@ extension TasksController {
     
     override func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
-        let doneAction = UIContextualAction(style: .normal, title: nil) { (action, sourceView, completionHandler) in
-            <#code#>
+        let doneAction = UIContextualAction(style: .normal, title: nil) { (action, sourceView, completionHandler)  in
+            self.taskStore.tasks[indexPath.section][indexPath.row].isDone = true
+            let doneTask = self.taskStore.removeTask(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+            self.taskStore.addTask(doneTask, at: 0, isDone: true)
+            
+            // Reload table view
+            tableView.insertRows(at: [IndexPath(row: 0, section: 1)], with: .automatic)
+            
+            completionHandler(true)
         }
         
-        return nil
+        doneAction.image = #imageLiteral(resourceName: "done")
+        doneAction.backgroundColor = .green
+        
+        return indexPath.section == 0 ? UISwipeActionsConfiguration(actions: [doneAction]) : nil
     }
 }
