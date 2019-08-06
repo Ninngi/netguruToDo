@@ -9,16 +9,16 @@
 import UIKit
 
 class Task: NSObject, NSCoding {
-    init(name: String, isDone: Bool = false) {
-        self.name = name
-        self.isDone = isDone
-    }
-    
     var name: String?
     var isDone: Bool?
     
     private let nameKey = "name"
     private let isDoneKey = "isDone"
+    
+    init(name: String, isDone: Bool = false) {
+        self.name = name
+        self.isDone = isDone
+    }
     
     func encode(with aCoder: NSCoder) {
         aCoder.encode(name, forKey: nameKey)

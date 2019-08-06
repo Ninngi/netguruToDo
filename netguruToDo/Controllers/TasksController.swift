@@ -10,12 +10,20 @@ import UIKit
 
 class TasksController: UITableViewController {
     
-    var taskStore: TaskStore!
+    var taskStore: TaskStore! {
+        didSet {
+            // get data
+            taskStore.tasks = TaskUtility.fetch() ?? [[Task](), [Task]()]
+            
+            // reload
+            tableView.reloadData()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
+        tableView.tableFooterView = UIView()
     }
     
     @IBAction func addTask(_ sender: UIBarButtonItem) {
@@ -39,7 +47,11 @@ class TasksController: UITableViewController {
             // Reload data
             let indexPath = IndexPath(row: 0, section: 0)
             self.tableView.insertRows(at: [indexPath], with: .automatic)
+//
+//            // Save data
+//            TaskUtility.saveData(self.taskStore.tasks)
         }
+        addAction.isEnabled = false
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
         addAction.isEnabled = false
@@ -63,7 +75,7 @@ class TasksController: UITableViewController {
         guard let alertController = presentedViewController as? UIAlertController,
               let addAction = alertController.actions.first,
               let text = sender.text
-        else { return }
+              else { return }
         
         // Enable "add action" if text is epty or whitespaces
         addAction.isEnabled = !text.trimmingCharacters(in: .whitespaces).isEmpty
@@ -102,11 +114,12 @@ extension TasksController {
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
         let deleteAction = UIContextualAction(style: .destructive, title: nil) { (action, sourceView, completionHandler) in
-            guard let isDone = self.taskStore.tasks[indexPath.section][indexPath.row].isDone else { return }
-            self.taskStore.removeTask(at: indexPath.row, isDone: isDone)
-            // Reload table view
-            self.tableView.deleteRows(at: [indexPath], with: .automatic)
-            completionHandler(true)
+            guard let isDone = self.taskStore.tasks[indexPath.section][indexPath.row].isDone else { return } // determinate whether the task is done
+            self.taskStore.removeTask(at: indexPath.row, isDone: isDone) // remove task from the apporpriate array
+            self.tableView.deleteRows(at: [indexPath], with: .automatic) // Reload table view
+//            // Save data
+//            TaskUtility.saveData(self.taskStore.tasks)
+            completionHandler(true) // indicate that the action was performed
         }
         
         deleteAction.image = #imageLiteral(resourceName: "delete.png")
@@ -124,6 +137,8 @@ extension TasksController {
             self.taskStore.addTask(doneTask, at: 0, isDone: true)
             // Reload table view
             tableView.insertRows(at: [IndexPath(row: 0, section: 1)], with: .automatic)
+//            // Save data
+//            TaskUtility.saveData(self.taskStore.tasks)
             completionHandler(true)
         }
         

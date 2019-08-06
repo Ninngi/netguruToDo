@@ -43,6 +43,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4305EE9C22F977C500BC1904 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				435108A722F8CEE4006146F6 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		4351089722F8CEE4006146F6 = {
 			isa = PBXGroup;
 			children = (
@@ -62,8 +70,8 @@
 		435108A222F8CEE4006146F6 /* netguruToDo */ = {
 			isa = PBXGroup;
 			children = (
-				435108A722F8CEE4006146F6 /* Main.storyboard */,
 				435108C222F904D6006146F6 /* Models */,
+				4305EE9C22F977C500BC1904 /* View */,
 				435108C322F904E5006146F6 /* Controllers */,
 				435108C422F904F2006146F6 /* Helpers */,
 				435108C522F9050C006146F6 /* System */,
